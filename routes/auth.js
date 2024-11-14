@@ -2,6 +2,7 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import authenticateToken from './middleware/auth.js';
+import db from '../config/db.js';
 
 const executeQuery = (query, params = [], callback) => {
     if (db.state === "disconnected") {
